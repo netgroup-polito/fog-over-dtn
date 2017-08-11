@@ -1,15 +1,27 @@
 import socket
 import errno
 from struct import unpack
+import base64
 
 # Address and port to listen to MQTT messages
 SERVER_ADDRESS = 'localhost'
 SERVER_PORT = 1883
+# Address and port of the DTN daemon
+DAEMON_ADDRESS = 'localhost'
+DAEMON_PORT = 4550
+# DTN Endpoint identifier of the destination application running on the node where the MQTT broker actually runs
+DESTINATION_EID = 'dtn://otvm1/broker'
 
 
 def decode_remaining_length(length_bytes):
     """
-    Decode message length according to MQTT specifications
+    Decode remaining message length according to MQTT specifications
+
+    Args:
+        length_bytes: Bytes containing the remaining length of the MQTT message encoded according to specifications
+
+    Returns:
+        a tuple containing the decoded remaining length and the number of bytes used by the encoded length (up to 4)
     """
     i = 0
     multiplier = 1
@@ -29,13 +41,19 @@ def decode_remaining_length(length_bytes):
     return value, i
 
 
-# Return values:
-# -2: ERROR_CONNECT
-# -1: ERROR_PARSING
-#  0: NEED_MORE_DATA
-#  1: PARSING_FINISHED
-
 def parse_message(msg):
+    """
+    Parse a MQTT message received from a client and possibly reply with the appropriate response
+
+    Args:
+        msg: Bytes received from the MQTT client
+
+    Returns:
+        -2 if the first message received from the client isn't a CONNECT message
+        -1 if the message is not in a known format and there is a parsing error
+        0 if the message isn't complete and more bytes have to be read from client socket
+        1 parsing finished
+    """
     global unprocessed_buffer
     global current_raw_message
 
@@ -48,7 +66,9 @@ def parse_message(msg):
         elif not first_message and packet_type != 0x30:
             return -1
 
-    # TODO: Fix the code. Could raise exception if len(current_raw_message) < 5
+    if len(current_raw_message) < 5:
+        return 0
+
     remaining_bytes, n = decode_remaining_length(current_raw_message[1:5])
     message_length = 1 + n + remaining_bytes
 
@@ -73,19 +93,61 @@ def parse_message(msg):
         topic = current_raw_message[3 + n:3 + n + topic_length[0]]
         payload = current_raw_message[3 + n + topic_length[0]:]
         print("PUBLISH Received - Topic: %s; Message: %s\n" % (topic, payload))
-        # TODO: Create a Bundle and send it through DTN daemon
+        send_bundle(topic, payload)
 
     current_raw_message = ''
     return 1
 
 
-# Create the socket
+def send_bundle(topic, message):
+    """
+    Create a bundle from a MQTT message and send it through IBR-DTN deamon
+
+    Args:
+        topic: The topic of the MQTT message
+        message: The MQTT payload
+    """
+    payload = "%s\n%s" % (topic, message)
+
+    bundle = "Destination: %s\n" % DESTINATION_EID
+    bundle += "Processing flags: 144\n"
+    bundle += "Blocks: 1\n\n"
+    bundle += "Block: 1\n"
+    bundle += "Flags: LAST_BLOCK\n"
+    bundle += "Length: %s\n\n" % str(len(topic) + len(message) + 1)
+    bundle += "%s\n\n" % base64.b64encode(payload)
+
+    d.send("bundle put plain\n")
+    fd.readline()
+
+    d.send(bundle)
+    fd.readline()
+
+    d.send("bundle send\n")
+    fd.readline()
+    print("Bundle sent\n")
+
+
+# Create the socket to communicate with the DTN daemon
+d = socket.socket()
+# Connect to the DTN daemon
+d.connect((DAEMON_ADDRESS, DAEMON_PORT))
+# Get a file object associated with the daemon's socket
+fd = d.makefile()
+# Read daemon's header response
+fd.readline()
+# Switch into extended protocol mode
+d.send("protocol extended\n")
+# Read protocol switch response
+fd.readline()
+
+# Create the socket to listen to MQTT messages coming from client
 s = socket.socket()
 # Optional: this allows the program to be immediately restarted after exit.
 # Otherwise, you may need to wait 2-4 minutes (depending on OS) to bind to the
 # listening port again.
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-# Bind to the desired address(es) and port.
+# Bind to the desired address(es) and port
 s.bind((SERVER_ADDRESS, SERVER_PORT))
 # How many "pending connections" may be queued. Exact interpretation of this
 # value is complicated and operating system dependent. This value is usually
@@ -110,7 +172,7 @@ while True:
         try:
             data = c.recv(1024)
         except socket.error as error:
-            if error.errno == errno.WSAECONNRESET:
+            if error.errno == errno.ECONNRESET:
                 print("Connection reset by peer. Resetting")
                 break
 
@@ -145,3 +207,5 @@ while True:
             break
 
     c.close()
+
+d.close()
