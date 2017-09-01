@@ -29,7 +29,7 @@ def decode_remaining_length(length_bytes):
     i = 0
     multiplier = 1
     value = 0
-    while i < 4:
+    while True:
         encoded_byte = length_bytes[i]
         i += 1
         int_byte = unpack('!B', encoded_byte)
@@ -38,9 +38,10 @@ def decode_remaining_length(length_bytes):
             break
         else:
             multiplier *= 128
-            # TODO: Verify correctness of the "remaining length" encoding as per protocol specification
-            # if multiplier > 128 * 128 * 128:
-            #    raise Exception
+            if multiplier > 128 * 128 * 128:
+                # Remaining length field not encoded properly, return error value
+                i = -1
+                break
     return value, i
 
 
@@ -66,13 +67,17 @@ def parse_message(msg):
         packet_type = unpack('!B', current_raw_message[0])[0] & 0xF0
         if first_message and packet_type != 0x10:
             return -2
-        elif not first_message and packet_type != 0x30 and packet_type != 0x60:
+        elif not first_message and packet_type != 0x30 and packet_type != 0x60 and packet_type != 0xC0:
             return -1
 
     if len(current_raw_message) < 5:
         return 0
 
     remaining_bytes, n = decode_remaining_length(current_raw_message[1:5])
+    # If remaining length field is not encoded properly, return parsing error
+    if n == -1:
+        return -1
+
     message_length = 1 + n + remaining_bytes
 
     if len(current_raw_message) < message_length:
@@ -113,7 +118,11 @@ def parse_message(msg):
         # Send PUBCOMP
         pubcomp = pack('!BBH', 112, 2, packet_identifier)
         c.send(pubcomp)
-    # TODO: Aggiungere supporto a PINGREQ
+    # PINGREQ
+    elif packet_type == 0xC0:
+        print("PINGREQ Received\n")
+        # Send PINGRESP
+        c.send('\xD0\0')
 
     current_raw_message = ''
     return 1
@@ -137,7 +146,7 @@ def send_bundle(topic, message, qos=0, mid=0):
     if qos == 0:
         bundle += "Processing flags: 148\n"
     elif qos > 0:
-        bundle += "Processing flags: 156"
+        bundle += "Processing flags: 156\n"
 
     bundle += "Blocks: 1\n\n"
     bundle += "Block: 1\n"
