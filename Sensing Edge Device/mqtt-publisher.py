@@ -7,7 +7,7 @@ import random
 # sleepTime = round(random.uniform(5, 10), 0)
 sleepTime = 1
 # MQTT details
-mqttDeviceId = "PC-Luigi"
+mqttDeviceId = socket.gethostname()
 mqttBrokerHost = "localhost"
 mqttBrokerPort = 1883
 mqttUser = "guest"
