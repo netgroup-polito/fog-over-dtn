@@ -1,0 +1,382 @@
+[
+  {
+    "_id": "8ae094f0-4b8f-11e7-93b1-839994657da4",
+    "_type": "dashboard",
+    "_source": {
+      "title": "PC-Luigi",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"size_x\":6,\"size_y\":3,\"panelIndex\":1,\"type\":\"visualization\",\"id\":\"a7a977b0-4b8e-11e7-93b1-839994657da4\",\"col\":1,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":2,\"type\":\"visualization\",\"id\":\"40e38ab0-4b8f-11e7-93b1-839994657da4\",\"col\":7,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":3,\"type\":\"visualization\",\"id\":\"73e1e4c0-4b8f-11e7-93b1-839994657da4\",\"col\":1,\"row\":4}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-2\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "63d194a0-9eb8-11e7-b990-5789a134896a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Raspi-A6",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"size_x\":6,\"size_y\":3,\"panelIndex\":1,\"type\":\"visualization\",\"id\":\"7879c720-9eb7-11e7-b990-5789a134896a\",\"col\":1,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":2,\"type\":\"visualization\",\"id\":\"62ac6b00-9eb7-11e7-b990-5789a134896a\",\"col\":7,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":3,\"type\":\"visualization\",\"id\":\"4af87490-9eb7-11e7-b990-5789a134896a\",\"col\":1,\"row\":4}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-2\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "78ae2820-9eb8-11e7-b990-5789a134896a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Raspi-5C",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"size_x\":6,\"size_y\":3,\"panelIndex\":1,\"type\":\"visualization\",\"id\":\"80095af0-9eb7-11e7-b990-5789a134896a\",\"col\":1,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":2,\"type\":\"visualization\",\"id\":\"68ece990-9eb7-11e7-b990-5789a134896a\",\"col\":7,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":3,\"type\":\"visualization\",\"id\":\"52a9e840-9eb7-11e7-b990-5789a134896a\",\"col\":1,\"row\":4}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-2\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "fe7ac4a0-4b8d-11e7-93b1-839994657da4",
+    "_type": "search",
+    "_source": {
+      "title": "PC-Luigi:Hum",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"PC-LUIGI\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"PC-LUIGI\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"humidity\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"humidity\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "434a0390-9eb6-11e7-b990-5789a134896a",
+    "_type": "search",
+    "_source": {
+      "title": "Raspi-A6:Hum",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"raspi-A6\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"raspi-A6\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"humidity\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"humidity\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "694067f0-4b8d-11e7-93b1-839994657da4",
+    "_type": "search",
+    "_source": {
+      "title": "PC-Luigi:Temp",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"PC-LUIGI\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"PC-LUIGI\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"temperature\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"temperature\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "b4a57bf0-9eb6-11e7-b990-5789a134896a",
+    "_type": "search",
+    "_source": {
+      "title": "Raspi-A6:Temp",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"raspi-A6\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"raspi-A6\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"temperature\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"temperature\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "c6d08400-9eb6-11e7-b990-5789a134896a",
+    "_type": "search",
+    "_source": {
+      "title": "Raspi-5C:Temp",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"raspi-5C\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"raspi-5C\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"temperature\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"temperature\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "7ab47c10-4b8d-11e7-93b1-839994657da4",
+    "_type": "search",
+    "_source": {
+      "title": "PC-Luigi:Press",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"pressure\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"pressure\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"PC-LUIGI\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"PC-LUIGI\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "6aec0a60-9eb6-11e7-b990-5789a134896a",
+    "_type": "search",
+    "_source": {
+      "title": "Raspi-A6:Press",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"pressure\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"pressure\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"raspi-A6\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"raspi-A6\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "7a271e70-9eb6-11e7-b990-5789a134896a",
+    "_type": "search",
+    "_source": {
+      "title": "Raspi-5C:Press",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"pressure\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"pressure\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"raspi-5C\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"raspi-5C\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "8afbbe40-9eb6-11e7-b990-5789a134896a",
+    "_type": "search",
+    "_source": {
+      "title": "Raspi-5C:Hum",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "Timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"rpi\",\"highlightAll\":true,\"version\":true,\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"DeviceId\",\"value\":\"raspi-5C\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"DeviceId\":{\"query\":\"raspi-5C\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"index\":\"rpi\",\"key\":\"_type\",\"value\":\"humidity\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"_type\":{\"query\":\"humidity\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "40e38ab0-4b8f-11e7-93b1-839994657da4",
+    "_type": "visualization",
+    "_source": {
+      "title": "PC-Luigi:Pressure",
+      "visState": "{\"title\":\"PC-Luigi:Pressure\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Pressure\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"Timestamp\",\"interval\":\"d\",\"customInterval\":\"10m\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Pressure readings above 1050 atm\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "7ab47c10-4b8d-11e7-93b1-839994657da4",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "a7a977b0-4b8e-11e7-93b1-839994657da4",
+    "_type": "visualization",
+    "_source": {
+      "title": "PC-Luigi:Temp",
+      "visState": "{\"title\":\"PC-Luigi:Temp\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"Timestamp\",\"interval\":\"d\",\"customInterval\":\"10m\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Temperature readings above 29°C\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Temperature\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "694067f0-4b8d-11e7-93b1-839994657da4",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "73e1e4c0-4b8f-11e7-93b1-839994657da4",
+    "_type": "visualization",
+    "_source": {
+      "title": "PC-Luigi:Hum",
+      "visState": "{\"title\":\"PC-Luigi:Hum\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Humidity\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"Timestamp\",\"interval\":\"d\",\"customInterval\":\"10m\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Humidity readings above 90%\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "fe7ac4a0-4b8d-11e7-93b1-839994657da4",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4af87490-9eb7-11e7-b990-5789a134896a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raspi-A6:Hum",
+      "visState": "{\n  \"title\": \"Raspi-A6:Hum\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Humidity\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"Timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"10m\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"Humidity readings above 90%\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "434a0390-9eb6-11e7-b990-5789a134896a",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "7879c720-9eb7-11e7-b990-5789a134896a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raspi-A6:Temp",
+      "visState": "{\n  \"title\": \"Raspi-A6:Temp\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"Timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"10m\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"Temperature readings above 29°C\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Temperature\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "b4a57bf0-9eb6-11e7-b990-5789a134896a",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "62ac6b00-9eb7-11e7-b990-5789a134896a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raspi-A6:Pressure",
+      "visState": "{\n  \"title\": \"Raspi-A6:Pressure\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Pressure\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"Timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"10m\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"Pressure readings above 1050 atm\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "6aec0a60-9eb6-11e7-b990-5789a134896a",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "52a9e840-9eb7-11e7-b990-5789a134896a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raspi-5C:Hum",
+      "visState": "{\n  \"title\": \"Raspi-5C:Hum\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Humidity\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"Timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"10m\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"Humidity readings above 90%\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "8afbbe40-9eb6-11e7-b990-5789a134896a",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "80095af0-9eb7-11e7-b990-5789a134896a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raspi-5C:Temp",
+      "visState": "{\n  \"title\": \"Raspi-5C:Temp\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"Timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"10m\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"Temperature readings above 29°C\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Temperature\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "c6d08400-9eb6-11e7-b990-5789a134896a",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "68ece990-9eb7-11e7-b990-5789a134896a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raspi-5C:Pressure",
+      "visState": "{\n  \"title\": \"Raspi-5C:Pressure\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Pressure\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"Timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"10m\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"Pressure readings above 1050 atm\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "7a271e70-9eb6-11e7-b990-5789a134896a",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  }
+]
