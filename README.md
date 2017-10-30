@@ -1,0 +1,12 @@
+# Fog Over DTN
+This repository contains the code implementation and tests of the MQTT-DTN Gateway architecture designed for my Master's degree thesis.
+The title of the thesis is *"Deploying Fog Computing Applications in Unstructured and Unreliable Edge Networks"*.
+
+# Abstract
+Fog computing is an emerging paradigm that extends Cloud computing distributing resources and services of computing, storage, control and networking anywhere along the continuum from Cloud to Things.
+
+In contexts such as agriculture, construction, surveying, forestry or mining, the connection of physical things to analytics and machine learning applications can help glean insights from gathered data. Fog computing will add value by pushing analytics closer to data sources. Fog nodes placed on field could perform data preparation and preliminary data analysis. Only filtered and/or aggregated data could be send up to Cloud for further analysis and persistent storage, thus reducing bandwidth consumption and improving privacy.
+
+Communications, mostly done through wireless networks, could suffer from disrupted connectivity in these challenged environments. Also, the connections change over time due to mobility of machines. Application protocols based on TCP/IP may take impractical amounts of time or fail completely in the absence of an end-to-end path between source and destination. A way to overcome the problem is by using store-carry-and-forward message switching, where blocks of application data are moved from node to node along a path that eventually reaches the destination. Disruption/Delay Tolerant Networks implements this logic by overlaying a new transmission protocol, called the Bundle Protocol, on top of lower layers. 
+
+The goal of the thesis is to design an architecture, transparent with respect to pub/sub based IoT messaging protocols, which exploits devices mobility and their occasional contacts for providing the benefits of Fog computing in such environments. Finally, a Proof-Of-Concept telemetry application is developed. Raspberry-Pis, connected through a Wi-Fi Ad-Hoc network, act as data sources and can forward each other produced data to a Fog node, where data elaboration takes place, exploiting an implementation of the Bundle Protocol called IBR-DTN.
