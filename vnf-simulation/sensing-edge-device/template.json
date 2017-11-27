@@ -1,0 +1,30 @@
+{
+  "CPUrequirements": {
+    "platformType": "x86",
+    "socket": [
+      {
+        "coreNumbers": 1
+      }
+    ]
+  },
+  "ephemeral-file-system-size": 0,
+  "name": "raspi-node",
+  "functional-capability": "host",
+  "memory-size": 2048,
+  "vnf-type": "docker",
+  "uri-image-type": "docker-registry",
+  "swap-disk-size": 0,
+  "expandable": false,
+  "ports": [
+    {
+      "name": "eth",
+      "min": "1",
+      "label": "L2Port",
+      "ipv4-config": "none",
+      "position": "0-1",
+      "ipv6-config": "none"
+    }
+  ],
+  "root-file-system-size": 40,
+  "uri-image": "raspi-node:4"
+}
