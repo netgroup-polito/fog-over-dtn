@@ -1,0 +1,3 @@
+[submodule "vnf-simulation/simulation-code/nffg_library"]
+	path = vnf-simulation/simulation-code/nffg_library
+	url = https://github.com/netgroup-polito/nffg-library

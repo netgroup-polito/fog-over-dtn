@@ -1,16 +1,15 @@
 #!/usr/bin/env python
-import sys
 import subprocess
 import time
 import random
-import json
 import requests
 import itertools
-import uuid
-from nffglib.nffg import *
 import csv
 import threading
 import os
+
+from nffg_library.nffg import *
+
 
 # Base URL of un-orchestrator REST APIs
 BASE_URL = 'http://localhost:8080/NF-FG/'
