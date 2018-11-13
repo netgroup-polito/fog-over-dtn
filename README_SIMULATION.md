@@ -124,7 +124,7 @@ It is possible to run multiple simulations in a row with different configuration
 
 Inside the script some significant parameters can be modified (the script automatically inject them in the simulator).
 
-#### Output collection
+### Output collection
 
 ##### Rabbitmq
 
