@@ -73,7 +73,7 @@ The simulation make use of the rabbitmq server as MQTT broker, and of the ELK st
     $ cd [fog-over-dtn]/Fog\ Node/ELK\ Fog/
     # docker build --tag=elk .
     
-NOTE: If you have a particular setup for the rabbitmq broker, then please configure corresponding ELK Stack parameters in [entrypoint.sh](Fog Node/Elk_Fog/entrypoint.sh) (e.g., rabbitmq host, mqtt user and password) before running the 'docker build' command.
+NOTE: If you have a particular setup for the rabbitmq broker, then please configure corresponding ELK Stack parameters in [entrypoint.sh](Fog%20Node/Elk_Fog/entrypoint.sh) (e.g., rabbitmq host, mqtt user and password) before running the 'docker build' command.
 
 
 ####
