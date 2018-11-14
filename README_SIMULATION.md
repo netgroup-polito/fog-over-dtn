@@ -29,6 +29,8 @@ Download the source code from this repository
 
     $ git clone https://github.com/netgroup-polito/fog-over-dtn
     $ git submodule init && git submodule update
+    
+The cloned directory (i.e., the project root folder) will be referred as [fog-over-dtn] in the reminder of this readme.
 
 #### Simulated devices images
 
