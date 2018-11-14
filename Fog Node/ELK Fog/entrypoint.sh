@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$RABBITMQ_HOST" ]; then
-  RABBITMQ_HOST="localhost"
+  RABBITMQ_HOST="172.17.0.2"
 fi
 if [ -z "$RABBITMQ_USER" ]; then
   RABBITMQ_USER="guest"

@@ -10,8 +10,8 @@ from math import ceil
 # Broker connection details
 mqttBrokerHost = '172.17.0.2'
 mqttBrokerPort = 1883
-mqttUser = 'elk'
-mqttPassword = 'Nebbiolo1234'
+mqttUser = 'guest'
+mqttPassword = 'guest'
 
 # Address and port of the DTN daemon
 DAEMON_ADDRESS = 'localhost'
