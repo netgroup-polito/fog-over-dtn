@@ -1,7 +1,10 @@
-# Fog Over DTN
-This repository contains the code implementation and tests of an MQTT/DTN Gateway architecture enabling a telemetry system to propagate data over challenged networks.
+# Telemetry system over DTN
 
-# Abstract
+This repository contains the first prototype implementation and tests of an MQTT/DTN Gateway architecture enabling a telemetry system to propagate data over challenged networks. The mqtt-to-dtn and the dtn-to-mqtt gateways, core of this repository, are the embrion of [Æther](https://bitbucket.tierraservice.com/projects/AR/repos/aether), which provides additional functionalities while integrating the mqtt protocol support as a plugin.
+
+This repository also provides a simulated environment that allows to setup a multi device telemetry system on a single machine through virtualized nodes. Please refer to the proper [readme](README_SIMULATION.md) for the detailed instruction regarding the installation and execution of the simulation.
+
+## Abstract
 Fog computing is an emerging paradigm that extends Cloud computing distributing resources and services of computing, storage, control and networking anywhere along the continuum from Cloud to Things.
 
 In contexts such as agriculture, construction, surveying, forestry or mining, the connection of physical things to analytics and machine learning applications can help glean insights from gathered data. Fog computing will add value by pushing analytics closer to data sources. Fog nodes placed on field could perform data preparation and preliminary data analysis. Only filtered and/or aggregated data could be send up to Cloud for further analysis and persistent storage, thus reducing bandwidth consumption and improving privacy.
